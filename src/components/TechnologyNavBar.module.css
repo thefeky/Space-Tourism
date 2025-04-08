@@ -1,0 +1,39 @@
+.nav {
+  padding-left: 50px;
+}
+
+.ul {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+}
+
+.link {
+  transition: 0.3s ease;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  display: block;
+  border: 1px solid rgb(255, 255, 255, 0.25);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link:hover {
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+.active,
+.active:hover {
+  background-color: white;
+  border: 1px solid rgb(255, 255, 255);
+  color: #0b0d17;
+}
+
+span {
+  font-family: "Bellefair";
+  font-size: 32px;
+}
