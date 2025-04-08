@@ -16,6 +16,7 @@ h1 {
   letter-spacing: 0px;
   font-size: 144px;
   text-align: left;
+  color: white;
 }
 
 .mainContent {
@@ -42,6 +43,7 @@ h1 {
   font-size: 28px;
   letter-spacing: 4px;
   text-align: left;
+  color: #d0d6f9;
 }
 
 .intro {
@@ -52,6 +54,7 @@ h1 {
   width: 80%;
   max-width: 430px;
   text-align: left;
+  color: #d0d6f9;
 }
 
 .explore {

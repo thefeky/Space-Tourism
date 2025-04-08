@@ -20,9 +20,9 @@ function Destination() {
       }
 
       try {
-        const res = await fetch("/assets/data.json");
+        const res = await fetch("/assets/destinations.json");
         const data = await res.json();
-        setPlanets(data.destinations);
+        setPlanets(data);
       } catch (error) {
         console.error("Fetch error:", error);
       }
