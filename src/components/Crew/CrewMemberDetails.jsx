@@ -1,5 +1,5 @@
-import Spinner from "./Spinner";
 import styles from "./CrewMemberDetails.module.css";
+import Spinner from "../Shared/Spinner";
 
 function CrewMemberDetails({ crewMember }) {
   if (!crewMember) return <Spinner />;

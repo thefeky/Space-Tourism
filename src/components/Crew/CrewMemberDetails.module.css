@@ -1,0 +1,83 @@
+/* Mobile-first styles */
+.details {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.role {
+  font-family: "Bellefair";
+  font-size: 18px;
+  opacity: 50%;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-family: "Bellefair";
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.bio {
+  font-family: "Barlow";
+  font-size: 16px;
+  line-height: 150%;
+  color: #d0d6f9;
+  text-align: center;
+  width: 90%;
+  height: 5rem;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .details {
+    padding: 1.5rem;
+  }
+
+  .role {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    font-size: 40px;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio {
+    width: 80%;
+    line-height: 180%;
+    font-size: 18px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .details {
+    align-items: flex-start;
+    padding: 4rem;
+  }
+
+  .role {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .name {
+    font-size: 56px;
+    margin-bottom: 24px;
+  }
+
+  .bio {
+    font-size: 18px;
+    line-height: 180%;
+    width: 520px;
+    height: 200px;
+    text-align: left;
+  }
+}

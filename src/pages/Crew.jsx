@@ -1,10 +1,11 @@
 import styles from "./Crew.module.css";
-import NavigationBar from "../components/NavigationBar";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CrewMemberImage from "../components/CrewMemberImage";
-import CrewMemberDetails from "../components/CrewMemberDetails";
-import CrewNavBar from "../components/CrewNavBar";
+import NavigationBar from "../components/Shared/NavigationBar";
+import CrewMemberImage from "../components/Crew/CrewMemberImage";
+import CrewMemberDetails from "../components/Crew/CrewMemberDetails";
+import CrewNavBar from "../components/Crew/CrewNavBar";
+import Footer from "../components/Shared/Footer";
 
 function Crew() {
   const [crew, setCrew] = useState([]);
@@ -24,9 +25,9 @@ function Crew() {
       }
 
       try {
-        const res = await fetch("/assets/crew.json");
+        const res = await fetch("/assets/data.json");
         const data = await res.json();
-        setCrew(data);
+        setCrew(data.crew);
       } catch (error) {
         console.error("Fetch error:", error);
       }
@@ -42,16 +43,17 @@ function Crew() {
           <strong>02</strong> Meet your crew
         </p>
         <div className={styles.content}>
-          <div className={styles.left}>
+          <div className={styles.first}>
             <CrewMemberDetails crewMember={crewMember} />
 
             <CrewNavBar crew={crew} />
           </div>
-          <div className={styles.right}>
+          <div className={styles.second}>
             <CrewMemberImage crewMember={crewMember} />
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

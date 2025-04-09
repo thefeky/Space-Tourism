@@ -1,10 +1,11 @@
 import styles from "./Destination.module.css";
-import NavigationBar from "../components/NavigationBar";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import PlanetImage from "../components/PlanetImage";
-import PlanetDetails from "../components/PlanetDetails";
-import PlanetsNavBar from "../components/PlanetsNavBar";
+import NavigationBar from "../components/Shared/NavigationBar";
+import PlanetImage from "../components/Destination/PlanetImage";
+import PlanetDetails from "../components/Destination/PlanetDetails";
+import PlanetsNavBar from "../components/Destination/PlanetsNavBar";
+import Footer from "../components/Shared/Footer";
 
 function Destination() {
   const [planets, setPlanets] = useState([]);
@@ -20,9 +21,9 @@ function Destination() {
       }
 
       try {
-        const res = await fetch("/assets/destinations.json");
+        const res = await fetch("/assets/data.json");
         const data = await res.json();
-        setPlanets(data);
+        setPlanets(data.destinations);
       } catch (error) {
         console.error("Fetch error:", error);
       }
@@ -38,15 +39,16 @@ function Destination() {
           <strong>01</strong> Pick your destination
         </p>
         <div className={styles.content}>
-          <div className={styles.left}>
+          <div className={styles.first}>
             <PlanetImage planet={planet} />
           </div>
-          <div className={styles.right}>
+          <div className={styles.second}>
             <PlanetsNavBar planets={planets} />
             <PlanetDetails planet={planet} />
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

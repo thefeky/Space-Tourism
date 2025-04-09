@@ -1,5 +1,5 @@
-import Spinner from "./Spinner";
 import styles from "./PlanetDetails.module.css";
+import Spinner from "../Shared/Spinner";
 
 function PlanetDetails({ planet }) {
   if (!planet) return <Spinner />;

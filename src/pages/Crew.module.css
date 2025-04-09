@@ -1,8 +1,9 @@
+/* Mobile-first styles */
 .main {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url(../assets/crew/background-crew-desktop.jpg);
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -16,47 +17,113 @@
 
 .contentWrapper {
   width: 100%;
-  max-width: 1550px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
-  margin-top: 48px;
+  box-sizing: border-box;
 }
 
 .title {
   font-family: "Barlow Condensed";
-  font-size: 28px;
-  letter-spacing: 4px;
+  font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  left: 0;
+  text-align: center;
+  gap: 24px;
+  display: flex;
 }
 
 .title strong {
   opacity: 0.25;
-  letter-spacing: 4.72px;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 6rem;
   flex: 1;
+  gap: 1rem;
 }
 
-.right {
-  flex: 1;
+.first {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.second {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+/* Tablet styles */
+@media (min-width: 768px) {
+  .main {
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+
+  .contentWrapper {
+    align-items: flex-start;
+
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 20px;
+    letter-spacing: 3.5px;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .main {
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+  }
+
+  .contentWrapper {
+    max-width: 1550px;
+    margin: 3rem;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+
+  .first {
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .second {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
 }

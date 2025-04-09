@@ -1,6 +1,7 @@
 import styles from "./Homepage.module.css";
-import NavigationBar from "../components/NavigationBar";
 import { NavLink } from "react-router-dom";
+import NavigationBar from "../components/Shared/NavigationBar";
+import Footer from "../components/Shared/Footer";
 
 function Homepage() {
   return (
@@ -23,6 +24,7 @@ function Homepage() {
           </NavLink>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

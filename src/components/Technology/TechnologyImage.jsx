@@ -1,5 +1,5 @@
 import styles from "./TechnologyImage.module.css";
-import Spinner from "./Spinner";
+import Spinner from "../Shared/Spinner";
 
 function TechnologyImage({ tech }) {
   if (!tech) return <Spinner />;

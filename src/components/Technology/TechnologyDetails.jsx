@@ -1,5 +1,5 @@
 import styles from "./TechnologyDetails.module.css";
-import Spinner from "./Spinner";
+import Spinner from "../Shared/Spinner";
 
 function TechnologyDetails({ tech }) {
   if (!tech) return <Spinner />;

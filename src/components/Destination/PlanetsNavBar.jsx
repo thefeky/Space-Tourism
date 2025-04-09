@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import styles from "./PlanetsNavBar.module.css";
+import { NavLink } from "react-router-dom";
 
 function PlanetsNavBar({ planets }) {
   return (

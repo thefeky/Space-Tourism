@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import styles from "./TechnologyNavBar.module.css";
+import { NavLink } from "react-router-dom";
 
 function TechnologyNavBar({ techs }) {
   return (

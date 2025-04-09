@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import styles from "./CrewNavBar.module.css";
+import { NavLink } from "react-router-dom";
 
 function CrewNavBar({ crew }) {
   return (

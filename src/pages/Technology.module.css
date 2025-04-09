@@ -1,8 +1,9 @@
+/* Mobile-first styles */
 .main {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url(../assets/technology/background-technology-desktop.jpg);
+  background-image: url(../assets/technology/background-technology-mobile.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -16,48 +17,127 @@
 
 .contentWrapper {
   width: 100%;
-  max-width: 1550px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
-  margin-top: 48px;
+  box-sizing: border-box;
 }
 
 .title {
   font-family: "Barlow Condensed";
-  font-size: 28px;
-  letter-spacing: 4px;
+  font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  left: 0;
+  text-align: center;
+  gap: 24px;
+  display: flex;
 }
 
 .title strong {
   opacity: 0.25;
-  letter-spacing: 4.72px;
+  letter-spacing: 2.7px;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack content vertically for mobile */
   align-items: center;
-  gap: 6rem;
   flex: 1;
 }
 
-.right {
-  flex: 1;
+.first {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  order: 1;
 }
 
-.left {
-  flex: 1;
+.second {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 64px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  order: 2;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .main {
+    background-image: url(../assets/technology/background-technology-tablet.jpg);
+  }
+
+  .contentWrapper {
+    padding: 40px;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 20px;
+    letter-spacing: 3.5px;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .content {
+    flex-direction: column; /* Still stacked vertically for tablet */
+    gap: 3rem;
+  }
+
+  .first {
+    width: 80%;
+  }
+
+  .second {
+    width: 80%;
+    text-align: left;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .main {
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
+  }
+
+  .contentWrapper {
+    max-width: 1550px;
+    margin: 3rem;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+  }
+
+  .first {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+  }
+
+  .second {
+    flex: 1;
+    gap: 2rem;
+    order: 1;
+    flex-direction: row;
+    padding-left: 3rem;
+  }
 }

@@ -1,10 +1,11 @@
 import styles from "./Technology.module.css";
 import { useEffect, useState } from "react";
-import NavigationBar from "../components/NavigationBar";
 import { useNavigate, useParams } from "react-router-dom";
-import TechnologyImage from "../components/TechnologyImage";
-import TechnologyDetails from "../components/TechnologyDetails";
-import TechnologyNavBar from "../components/TechnologyNavBar";
+import NavigationBar from "../components/Shared/NavigationBar";
+import TechnologyImage from "../components/Technology/TechnologyImage";
+import TechnologyDetails from "../components/Technology/TechnologyDetails";
+import TechnologyNavBar from "../components/Technology/TechnologyNavBar";
+import Footer from "../components/Shared/Footer";
 
 function Technology() {
   const [techs, setTechs] = useState([]);
@@ -19,20 +20,21 @@ function Technology() {
 
   useEffect(() => {
     async function fetchTechs() {
-      if (!tech) {
+      if (!techName) {
         navigate("/technology/launch-vehicle", { replace: true });
       }
 
       try {
-        const res = await fetch("/assets/technology.json");
+        const res = await fetch("/assets/data.json");
         const data = await res.json();
-        setTechs(data);
+        setTechs(data.technology);
       } catch (error) {
         console.error("Fetch error:", error);
       }
     }
     fetchTechs();
-  }, [tech, navigate]);
+  }, [techName, navigate]);
+
   return (
     <main className={styles.main}>
       <NavigationBar />
@@ -41,15 +43,16 @@ function Technology() {
           <strong>03</strong> Space launch 101
         </p>
         <div className={styles.content}>
-          <div className={styles.left}>
+          <div className={styles.first}>
+            <TechnologyImage tech={tech} />
+          </div>
+          <div className={styles.second}>
             <TechnologyNavBar techs={techs} />
             <TechnologyDetails tech={tech} />
           </div>
-          <div className={styles.right}>
-            <TechnologyImage tech={tech} />
-          </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 import styles from "./PlanetImage.module.css";
-import Spinner from "./Spinner";
+import Spinner from "../Shared/Spinner";
 
 function PlanetImage({ planet }) {
   if (!planet) return <Spinner />;
