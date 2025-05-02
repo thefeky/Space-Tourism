@@ -1,48 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import { useDataContext } from "@/contexts/DataContext";
 
 import TechnologyImage from "../components/Technology/TechnologyImage";
 import TechnologyDetails from "../components/Technology/TechnologyDetails";
 import TechnologyNavBar from "../components/Technology/TechnologyNavBar";
 
-interface Tech {
-  name: string;
-  images: {
-    portrait: string;
-    landscape: string;
-  };
-  description: string;
-}
-
 function Technology() {
-  const [techs, setTechs] = useState<Tech[]>([]);
+  const {technology}= useDataContext();
   const { techName } = useParams();
   const navigate = useNavigate();
 
   const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, "-");
 
-  const tech = techs.find(
+  const tech = technology.find(
     (c) => normalize(c.name) === (techName || "launch-vehicle")
   );
 
   useEffect(() => {
-    function fetchTechs() {
-      if (!techName) {
-        navigate("/technology/launch-vehicle", { replace: true });
-      }
-
-      axios
-        .get("/data.json")
-        .then((res) => {
-          setTechs(res.data.technology);
-        })
-        .catch((error) => {
-          console.error("Fetch error:", error);
-        });
+    if (technology.length > 0 && (!techName || !tech)) {
+      navigate("/technology/launch-vehicle", { replace: true });
     }
-    fetchTechs();
-  }, [techName, navigate]);
+  }, [techName, technology, tech, navigate]);
 
   return (
     <main className="overflow-y-auto xl:overflow-y-hidden w-screen h-screen bg-[url(/assets/technology/background-technology-mobile.jpg)] md:bg-[url(/assets/technology/background-technology-tablet.jpg)] xl:bg-[url(/assets/technology/background-technology-desktop.jpg)] bg-cover bg-center flex flex-col items-center text-white pt-[88px] md:pt-[96px] xl:pt-[136px]">
@@ -56,7 +35,7 @@ function Technology() {
             {tech && <TechnologyImage images={tech.images} name={tech.name} />}
           </div>
           <div className="w-[90%] mb-5 flex flex-col items-center md:w-[80%] md:text-left xl:flex-1 xl:gap-8 order-2 xl:order-1 xl:flex-row xl:pl-12 xl:justify-start">
-            <TechnologyNavBar techs={techs} />
+            <TechnologyNavBar technology={technology} />
             {tech && (
               <TechnologyDetails
                 name={tech.name}

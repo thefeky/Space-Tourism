@@ -1,43 +1,24 @@
+import { useEffect} from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useDataContext } from "@/contexts/DataContext";
 
 import PlanetImage from "../components/Destination/PlanetImage";
 import PlanetDetails from "../components/Destination/PlanetDetails";
 import PlanetsNavBar from "../components/Destination/PlanetsNavBar";
 
-interface Planet {
-  name: string;
-  image: string;
-  description: string;
-  distance: string;
-  travel: string;
-}
 
 function Destination() {
-  const [planets, setPlanets] = useState<Planet[]>([]);
+  const { destinations } = useDataContext();
   const { planetName } = useParams();
   const navigate = useNavigate();
 
-  const planet = planets.find((p) => p.name === (planetName || "moon"));
+  const planet = destinations.find((p) => p.name === (planetName || "moon"));
 
   useEffect(() => {
-    function fetchPlanets() {
-      if (!planetName) {
-        navigate("/destination/moon", { replace: true });
-      }
-
-      axios
-        .get("/data.json")
-        .then((res) => {
-          setPlanets(res.data.destinations);
-        })
-        .catch((error) => {
-          console.error("Fetch error:", error);
-        });
+    if (destinations.length > 0 && (!planetName || !planet)) {
+      navigate("/destination/moon", { replace: true });
     }
-    fetchPlanets();
-  }, [planetName, navigate]);
+  }, [planetName, destinations, planet, navigate]);
 
   return (
     <main className="overflow-y-auto xl:overflow-y-hidden w-screen h-screen bg-[url(/assets/destination/background-destination-mobile.jpg)] md:bg-[url(/assets/destination/background-destination-tablet.jpg)] xl:bg-[url(/assets/destination/background-destination-desktop.jpg)] bg-cover bg-center flex flex-col items-center text-white pt-[88px] md:pt-[96px] xl:pt-[136px]">
@@ -51,7 +32,7 @@ function Destination() {
             {planet && <PlanetImage name={planet.name} image={planet.image} />}
           </div>
           <div className="mb-5 flex flex-col text-center items-center md:w-[80%] md:text-left xl:flex-1">
-            <PlanetsNavBar planets={planets} />
+            <PlanetsNavBar destinations={destinations} />
             {planet && (
               <PlanetDetails
                 name={planet.name}

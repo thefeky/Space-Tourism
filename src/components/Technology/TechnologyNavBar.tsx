@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 
 interface TechnologyNavBarProps {
-  techs: { name: string }[];
+  technology: { name: string }[];
 }
 
-function TechnologyNavBar({ techs }: TechnologyNavBarProps) {
+function TechnologyNavBar({ technology }: TechnologyNavBarProps) {
   return (
     <nav className="pb-4">
       <ul className="flex gap-4 justify-center xl:gap-8 xl:flex-col">
-        {techs.map((tech, index) => (
+        {technology.map((tech, index) => (
           <li key={tech.name}>
             <NavLink
               to={`/technology/${tech.name.toLowerCase().replace(/\s+/g, "-")}`}

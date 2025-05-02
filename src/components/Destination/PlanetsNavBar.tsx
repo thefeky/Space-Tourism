@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 
 interface PlanetsNavBarProps {
-  planets: { name: string }[];
+  destinations: { name: string }[];
 }
 
-function PlanetsNavBar({ planets }: PlanetsNavBarProps) {
+function PlanetsNavBar({ destinations }: PlanetsNavBarProps) {
   return (
     <nav className="mb-4 text-center xl:items-start xl:w-full">
       <ul className="flex gap-8 p-0 m-0">
-        {planets.map((planet) => (
+        {destinations.map((planet) => (
           <li key={planet.name}>
             <NavLink
               to={`/destination/${planet.name.toLowerCase()}`}

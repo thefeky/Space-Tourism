@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useDataContext } from "@/contexts/DataContext";
 
 import CrewMemberImage from "../components/Crew/CrewMemberImage";
 import CrewMemberDetails from "../components/Crew/CrewMemberDetails";
 import CrewNavBar from "../components/Crew/CrewNavBar";
-import axios from "axios";
-
-interface CrewMember {
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-}
 
 function Crew() {
-  const [crew, setCrew] = useState<CrewMember[]>([]);
+  const {crew} = useDataContext();
   const { name } = useParams();
   const navigate = useNavigate();
 
@@ -26,22 +19,10 @@ function Crew() {
   );
 
   useEffect(() => {
-    function fetchCrew() {
-      if (!name) {
-        navigate("/crew/douglas-hurley", { replace: true });
-      }
-
-      axios
-        .get("/data.json")
-        .then((res) => {
-          setCrew(res.data.crew);
-        })
-        .catch((error) => {
-          console.error("Fetch error:", error);
-        });
+    if (crew.length > 0 && (!name || !crewMember)) {
+      navigate("/crew/douglas-hurley", { replace: true });
     }
-    fetchCrew();
-  }, [name, navigate]);
+  }, [name, crew, crewMember, navigate]);
 
   return (
     <main className="overflow-y-auto xl:overflow-y-hidden w-screen h-screen bg-[url(/assets/crew/background-crew-mobile.jpg)] md:bg-[url(/assets/crew/background-crew-tablet.jpg)] xl:bg-[url(/assets/crew/background-crew-desktop.jpg)] bg-cover bg-center flex flex-col items-center text-white pt-[88px] md:pt-[96px] xl:pt-[136px]">
