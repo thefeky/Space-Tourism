@@ -51,4 +51,4 @@ Users should be able to:
 
 - Website - [@thefeky](https://github.com/thefeky)
 - Frontend Mentor - [@thefeky](https://www.frontendmentor.io/profile/thefeky)
-- Linked - [@AhmedHanyElfeky](https://www.linkedin.com/in/ahmedhanyelfeky/))
+- Linked - [@AhmedHanyElfeky](https://www.linkedin.com/in/ahmedhanyelfeky/)
