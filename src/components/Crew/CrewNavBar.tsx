@@ -6,7 +6,7 @@ interface CrewNavBarProps {
 
 function CrewNavBar({ crew }: CrewNavBarProps) {
   return (
-    <nav className="pt-12 md:p-12 xl:p-18">
+    <nav className="pt-16 md:p-12 xl:p-18">
       <ul className="flex gap-4 justify-center md:gap-6 md:justify-start xl:gap-10">
         {crew.map((crewMember) => (
           <li key={crewMember.name}>

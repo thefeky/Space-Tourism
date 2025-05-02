@@ -17,7 +17,7 @@ function CrewMemberDetails({ role, name, bio }: CrewMemberDetailsProps) {
       <p className="font-bellefair leading-none text-2xl uppercase mb-2 md:text-[40px] md:mb-1.5 xl:text-[56px] xl:mb-6">
         {name}
       </p>
-      <p className="font-barlow leading-[150%] text-[#D0D6F9] w-[80%] h-20 md:w-[80%] md:leading-[180%] md:text-lg xl:w-[450px] xl:h-50 xl:text-left">
+      <p className="font-barlow leading-[150%] text-[#D0D6F9] w-full h-20 md:w-[80%] md:leading-[180%] md:text-lg xl:w-[450px] xl:h-50 xl:text-left">
         {bio}
       </p>
     </div>
