@@ -75,5 +75,4 @@ function useDataContext () {
     return value;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export { useDataContext, DataProvider };
