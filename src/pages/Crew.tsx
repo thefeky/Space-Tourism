@@ -44,7 +44,7 @@ function Crew() {
   }, [name, navigate]);
 
   return (
-    <main className="overflow-y-auto md:overflow-y-hidden w-screen h-screen bg-[url(/src/assets/crew/background-crew-mobile.jpg)] md:bg-[url(/src/assets/crew/background-crew-tablet.jpg)] xl:bg-[url(/src/assets/crew/background-crew-desktop.jpg)] bg-cover bg-center flex flex-col items-center text-white pt-[88px] md:pt-[96px] xl:pt-[136px]">
+    <main className="overflow-y-auto md:overflow-y-hidden w-screen h-screen bg-[url(/assets/crew/background-crew-mobile.jpg)] md:bg-[url(/assets/crew/background-crew-tablet.jpg)] xl:bg-[url(/assets/crew/background-crew-desktop.jpg)] bg-cover bg-center flex flex-col items-center text-white pt-[88px] md:pt-[96px] xl:pt-[136px]">
       <div className="w-full h-full flex flex-col items-center md:items-start md:p-10  xl:max-w-[1550px] xl:m-12 xl:p-0">
         <p className="font-barlow-condensed leading-none tracking-[0.14em] uppercase text-center gap-6 flex md:text-xl md:tracking-[0.117em] md:text-left md:mb-8 xl:text-[28px] xl:tracking-[0.133em] xl:absolute">
           <span className="font-barlow-condensed opacity-25">02</span>

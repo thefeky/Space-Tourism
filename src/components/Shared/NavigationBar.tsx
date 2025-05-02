@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
-import hamburgerIcon from "../../assets/shared/icon-hamburger.svg";
-import closeIcon from "../../assets/shared/icon-close.svg";
+import hamburgerIcon from "/assets/shared/icon-hamburger.svg";
+import closeIcon from "/assets/shared/icon-close.svg";
 
 function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
