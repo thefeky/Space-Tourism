@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/reactjs-react-router-typescript-tailwind-css-50peAYhG2x
-- Live Site URL: https://space-tourism-pi-two.vercel.app/
+- Solution URL: [@Frontend Mentor](https://www.frontendmentor.io/solutions/reactjs-react-router-typescript-tailwind-css-50peAYhG2x)
+- Live Site URL: [@Netlify](https://thefeky-space-tourism.netlify.app/)
 
 ## My process
 
