@@ -29,11 +29,11 @@ function NavigationBar() {
       </div>
       <div className="hidden xl:block h-0.25 bg-white opacity-25 mr-[-52px] z-20 w-[40%] ml-5"></div>
       <nav
-        className={`flex-col text-white items-center fixed top-0 right-0 w-[67.5%] h-screen bg-white/5 backdrop-blur-[20px] z-10 pl-8 md:flex md:relative md:w-[88.5%] md:h-auto md:px-10 ${duoFix? "md:px-14" : ""} xl:w-[60%] xl:p-0 xl:m-0 ${
+        className={`flex-col text-white items-center fixed top-0 right-0 w-[67.5%] h-screen bg-white/5 backdrop-blur-[20px] z-10 pl-8 md:flex md:relative md:w-[88.5%] md:h-auto md:px-10 ${duoFix ? "md:px-14" : ""} xl:w-[60%] xl:p-0 xl:m-0 ${
           isMenuOpen ? "flex" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-8 mt-[133px] w-full md:flex-row md:gap-12 md:bg-white/5 md:backdrop-blur-[20px] md:m-0 md:w-[113.5%] md:justify-center xl:justify-around xl:p-0 xl:h-[96px] xl:w-full xl:bg-transparent xl:backdrop-blur-none">
+        <ul className="flex flex-col gap-8 mt-[133px] w-full md:flex-row md:gap-12 md:bg-white/5 md:backdrop-blur-[20px] md:m-0 md:w-[113.5%] md:justify-center xl:max-w-[1080px] xl:justify-around xl:p-0 xl:h-[96px] xl:bg-transparent xl:backdrop-blur-none">
           <li className="nav-li xl:ml-[100px]">
             <NavLink
               to="/"
