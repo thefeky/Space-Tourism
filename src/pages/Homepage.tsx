@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Homepage() {
+  useEffect(() => {
+    document.title = "Space Tourism";
+  }, []);
+
   return (
     <main className="home-bg w-screen h-screen bg-cover bg-center overflow-y-auto xl:overflow-y-hidden relative pt-[88px] md:pt-[96px] xl:pt-[136px]">
       <div className="h-auto flex flex-col gap-6 items-center justify-center md:pt-16 xl:flex-row xl:pt-32">
